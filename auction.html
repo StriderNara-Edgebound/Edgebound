@@ -2,36 +2,75 @@
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Confirmed Clients</title>
+<title>Auction DataShard</title>
 <style>
   html, body {
-    margin: 0; height: 100%;
-    background: #0b0f14; font-family: monospace; color: #0f0;
-    overflow: hidden;
-  }
-  #overlay {
-    position: fixed; inset: 0;
-    display: flex; align-items: center; justify-content: center;
+    margin: 0;
+    height: 100%;
     background: #0b0f14;
-    font-size: 2rem; letter-spacing: 0.2em;
+    font-family: monospace;
+    color: #0f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Overlay */
+  #overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b0f14;
+    font-size: 2rem;
+    letter-spacing: 0.2em;
     animation: fadeOut 1.5s ease-in-out 1.2s forwards;
     z-index: 10;
   }
-  @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
-  iframe {
-    width: 100vw; height: 100vh;
-    border: none; background: #0b0f14;
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-link {
+    padding: 0.5rem 1rem;
+  }
+
+  .image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    display: block;
     opacity: 0;
     animation: fadeIn 1s ease-in-out 2.7s forwards;
   }
+
   @keyframes fadeIn { to { opacity: 1; } }
 </style>
 </head>
 <body>
   <div id="overlay">Loading Auction DataShard...</div>
-  <p><a href="index.html" style="color:#0f0;">← Return to Data Shard</a></p>
-   <img src="assets/images/Auction.png" alt="Auction Info">
+  <div class="content">
+    <div class="back-link">
+      <a href="index.html" style="color:#0f0;">← Return to Data Shard</a>
+    </div>
+    <div class="image-container">
+      <img src="assets/images/Auction.png" alt="Auction Info">
+    </div>
+  </div>
 </body>
 </html>
-
-
